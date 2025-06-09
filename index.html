@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1>RIPASSO JS</h1>
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        // esercizio 1//
+        let numero1 = parseInt(prompt("Inserisci il primo numero"));
+        let numero2 = parseInt(prompt("Inserisci il secondo numero"));
+
+        if (numero1 === 50 || numero2 === 50 || numero1 + numero2 === 50) {
+            alert("Uno dei due numeri o la loro somma è 50");
+        }
+        else {
+            alert("Nessuno dei due numeri o la loro somma è 50");
+        }
+        
+        // esercizio 2//
+        function rimuoviCarattere(stringa, posizione) {
+            return stringa.slice(0, posizione) + stringa.slice(posizione + 1);
+        }
+        let risultato = rimuoviCarattere("ciao", 2);  // Rimuove il carattere alla posizione 2 → "cio"
+        console.log(risultato);
+
+
+
+    </script>
+
+</body>
+
+
+
+
+</html>
