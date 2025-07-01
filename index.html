@@ -11,38 +11,95 @@
 <body>
     <h1>RIPASSO JS</h1>
 
-
-
-
-
-
-
-
-
-
     <script>
 
-        // esercizio 1//
-        let numero1 = parseInt(prompt("Inserisci il primo numero"));
-        let numero2 = parseInt(prompt("Inserisci il secondo numero"));
+        // 1. Crea una funzione che controlli due numeri interi. Ritorna `true` se uno dei due è 50 o se la somma dei due è 50.
 
-        if (numero1 === 50 || numero2 === 50 || numero1 + numero2 === 50) {
-            alert("Uno dei due numeri o la loro somma è 50");
+        const somma50 = (a, b) => {
+            if (a === 50 || b === 5 || a + b === 50) {
+                return true
+            } else return false
         }
-        else {
-            alert("Nessuno dei due numeri o la loro somma è 50");
-        }
-        
-        // esercizio 2//
-        function rimuoviCarattere(stringa, posizione) {
-            return stringa.slice(0, posizione) + stringa.slice(posizione + 1);
-        }
-        let risultato = rimuoviCarattere("ciao", 2);  // Rimuove il carattere alla posizione 2 → "cio"
-        console.log(risultato);
+        // Esempio di utilizzo:
+        console.log(somma50(50, 10)); 
 
+        // 2. Crea una funzione che rimuova il carattere ad una specifica posizione da una stringa. Passa la stringa e la posizione come parametri e ritorna la stringa modificata.
 
+        const rimuoviCarattere = (stringa, posizione) => {
+            let arrDiLettere = stringa.split("")
+            arrDiLettere.splice(posizione, 1)
+            return arrDiLettere.join("")
+        }
+        // Esempio di utilizzo:
+        console.log(rimuoviCarattere("Ciao Mondo", 4));
+
+        // 3. Crea una funzione che controlli se due numeri siano compresi tra 40 e 60 o tra 70 e 100. Ritorna `true` se rispecchiano queste condizioni, altrimenti ritorna `false`.
+
+        const compresi = (a, b) => {
+            if (
+                (a >= 40 && a <= 60 && b >= 40 && b <= 60) ||
+                (a >= 70 && a <= 100 && b >= 70 && b <= 100)
+            ) {
+                return true
+            } else return false
+        }
+        // Esempio di utilizzo:
+        console.log(compresi(50, 55));
+
+        // 5. Crea una funzione che calcoli e ritorni la somma di tutti gli elementi di un array.
+        // L’array deve essere passato come parametro.
+
+        const calcolaSomma = (arr) => {
+            let temp = 0
+            for (let i = 0; i < arr.length; i++) {
+                const element = arr[i]
+                temp += element
+            }
+            return temp
+            //return arr.reduce((a,b)=> a+b, 0)
+        }
+        // Esempio di utilizzo:
+        console.log(calcolaSomma([1, 2, 3, 4, 5]));
+
+        // 6. Crea una funzione che controlli che un array NON contenga i numeri 1 o 3. Se NON li contiene, ritorna `true`, altrimenti ritorna `false`.
+
+        const non1e3 = (arr) => {
+            return !arr.includes(1) && !arr.includes(3)
+        }
+        // Esempio di utilizzo:
+        console.log(non1e3([2, 4, 5])); 
+
+        // 7. Crea una funzione per trovare il tipo di un angolo i cui gradi sono passati come parametro.
+        // Angolo acuto: meno di 90° ⇒ ritorna “acuto”
+        // Angolo ottuso: tra i 90° e i 180° gradi ⇒ ritorna “ottuso”
+        // Angolo retto: 90° ⇒ ritorna “retto”
+        // Angolo piatto: 180° ⇒ ritorna “piatto”
+
+        const angoli = (deg) => {
+            if (deg < 90) return "acuto"
+            if (deg > 90 && deg < 180) return "ottuso"
+            if (deg === 90) return "retto"
+            if (deg === 180) return "piatto"
+        }
+        // Esempio di utilizzo:
+        console.log(angoli(45));
+
+        // 8. Crea una funzione che crei un acronimo a partire da una frase. Es. “Fabbrica Italiana Automobili Torino” deve ritornare “FIAT”.
+
+        const acronimo = (frase) => {
+            let arrayParole = frase.split(" ")
+            let temp = ""
+            for (let i = 0; i < arrayParole.length; i++) {
+                const parola = arrayParole[i]
+                temp += parola.charAt(0)
+            }
+            return temp.toUpperCase()
+        }
+        // Esempio di utilizzo:
+        console.log(acronimo("Fabbrica Italiana Automobili Torino"));
 
     </script>
+
 
 </body>
 
